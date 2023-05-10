@@ -1,14 +1,14 @@
 #include "monty.h"
 
 /**
- *execute_instruction - passes and executes an instruction
+ *execute - passes and executes an instruction
  *@line: A string containing the instructions
  *@stack: A pointer to the stack
  *@line_number: The line number of the instruction
  *Return: void
  */
 
-void execute_instruction(char *line, stack_t **stack, unsigned int line_number)
+void execute(char *line, stack_t **stack, unsigned int line_number)
 {
 	char *opcode, *arg;
 
@@ -23,13 +23,12 @@ void execute_instruction(char *line, stack_t **stack, unsigned int line_number)
 	else if (strcmp(opcode, "pall") == 0)
 		pall(stack, line_number);
 }
- /**
- * free_stack - frees a stack
- * @stack: a pointer to the stack
- * Return: void
- */
 
-void free_stack(stack_t **stack)
+/**
+ * FreeStack - frees the stack
+ * @stack: stack provided
+ */
+void FreeStack(stack_t **stack)
 {
 	stack_t *current_node = *stack, *next_node;
 

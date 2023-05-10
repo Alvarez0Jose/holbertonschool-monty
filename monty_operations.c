@@ -47,8 +47,6 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
  * pall - print all elements in the stack
  * @stack: double pointer to the beginning of the stack
  * @line_number: line number in the file where the opcode exists
- *
- * Return: void
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
@@ -84,7 +82,6 @@ void print_stack(stack_t *stack)
  * @stack: double pointer to the beginning of the stack
  * @line_number: line number in the file where the opcode exists
  *
- * Return: void
  */
 
 void pint(stack_t **stack, unsigned int line_number)
@@ -99,17 +96,8 @@ void pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pop - remove the top element of the stack
- * @stack: double pointer to the beginning of the stack
- * @line_number: line number in the file where the opcode exists
- *
- * Return: void
- */
-
-/**
- * is_integer - checks if a string is an integer
+ * is_integer - checks if a string is a number
  * @str: the string to check
- *
  * Return: 1 if str is an integer, 0 otherwise
  */
 int is_integer(char *str)
