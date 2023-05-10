@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 	}
 
 	free(line);
-	free_stack(&stack);
+	FreeStack(&stack);
 	fclose(file);
 
 	return (EXIT_SUCCESS);
