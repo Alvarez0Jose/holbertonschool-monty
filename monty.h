@@ -22,9 +22,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -37,13 +37,13 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /** Prototypes and Helper functions **/
 
-void execute_instruction(char *line, stack_t **stack, unsigned int line_number);
+void execute(char *line, stack_t **stack, unsigned int line_number);
 int is_integer(char *str);
 void push(stack_t **stack, unsigned int line_number, char *arg);
 void pall(stack_t **stack, unsigned int line_number);
@@ -63,7 +63,7 @@ void rotr(stack_t **stack, unsigned int line_number);
 void stack(stack_t **stack, unsigned int line_number);
 void print_stack(stack_t *stack);
 void queue(stack_t **stack, unsigned int line_number);
-void free_stack(stack_t **stack);
+void FreeStack(stack_t **stack);
 
 
 #endif
