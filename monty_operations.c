@@ -32,11 +32,10 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 	new_node->prev = NULL;
 	new_node->next = *stack;
 
-	if (*stack != NULL)
+	if (*stack)
 		(*stack)->prev = new_node;
 
 	*stack = new_node;
-	free(arg);
 }
 
 /**
@@ -100,11 +99,11 @@ int is_integer(char *str)
 {
 	if (str == NULL || *str == '\0')
 		return (0);
-	if (*str == '-')
+	if (*str == '-' || *str == '+')
 		str++;
 	while (*str != '\0')
 	{
-		if (*str < '0' || *str > '9')
+		if (!isdigit(*str))
 			return (0);
 		str++;
 	}
