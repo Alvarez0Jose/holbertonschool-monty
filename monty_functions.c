@@ -34,7 +34,7 @@ void execute(char *line, stack_t **stack, unsigned int line_number)
 		nop(stack, line_number);
 	else
 	{
-		fprintf(stderr, "L%u unknown instruction %s\n", line_number);
+		fprintf(stderr, "L%u unknown instruction %s\n", line_number, opcode);
 		exit(EXIT_FAILURE);
 	}
 }
