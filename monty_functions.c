@@ -24,9 +24,9 @@ void execute(char *line, stack_t **stack, unsigned int line_number)
 		pall(stack, line_number);
 	else if (strcmp(opcode, "pint") == 0)
 		pint(stack, line_number);
-	else if (strcmp(opcode "pop") == 0)
+	else if (strcmp(opcode, "pop") == 0)
 		pop(stack, line_number);
-	else if (strcmp(opcode "swap") == 0)
+	else if (strcmp(opcode, "swap") == 0)
 		swap(stack, line_number);
 	else
 	{
