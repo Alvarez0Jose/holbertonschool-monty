@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 	int n;
 	stack_t *new_node = malloc(sizeof(stack_t));
 
-	if (!new_node || !arg || !is_integer(arg))
+	if (!arg || !is_integer(arg))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		free(new_node);
@@ -32,7 +32,7 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 	new_node->prev = NULL;
 	new_node->next = *stack;
 
-	if (*stack != NULL)
+	if (*stack)
 		(*stack)->prev = new_node;
 
 	*stack = new_node;

@@ -18,7 +18,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	top_node = *stack;
 	*stack = (*stack)->next;
-	if (*stack)
+	if (*stack != NULL)
 		(*stack)->prev = NULL;
 
 	free(top_node);
