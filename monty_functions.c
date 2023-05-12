@@ -19,7 +19,14 @@ void execute(char *line, stack_t **stack, unsigned int line_number)
 	arg = strtok(NULL, " \t\n\r");
 
 	if (strcmp(opcode, "push") == 0)
+	{
+		if (arg == NULL)
+		{
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
 		push(stack, line_number, arg);
+	}
 	else if (strcmp(opcode, "pall") == 0)
 		pall(stack, line_number);
 	else if (strcmp(opcode, "pint") == 0)
