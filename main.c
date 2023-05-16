@@ -33,11 +33,6 @@ int main(int argc, char **argv)
 		line_number++;
 		execute(line, &stack, line_number);
 	}
-	if (read == -1)
-	{
-		perror("Error reading line");
-		exit(EXIT_FAILURE);
-	}
 
 	free(line);
 	FreeStack(&stack);

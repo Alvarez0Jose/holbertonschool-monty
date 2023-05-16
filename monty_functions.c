@@ -45,13 +45,16 @@ void execute(char *line, stack_t **stack, unsigned int line_number)
  */
 void FreeStack(stack_t **stack)
 {
-	stack_t *current_node = *stack, *next_node;
+	stack_t *current_node = *stack, *temp;
+
+	if (stack == NULL || *stack == NULL)
+		return;
 
 	while (current_node != NULL)
 	{
-		next_node = current_node->next;
-		free(current_node);
-		current_node = next_node;
+		temp = current_node;
+		current_node = current_node->next;
+		free(temp);
 	}
 
 	*stack = NULL;
