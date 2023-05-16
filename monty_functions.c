@@ -13,7 +13,7 @@ void execute(char *line, stack_t **stack, unsigned int line_number)
 	char *opcode, *arg;
 
 	opcode = strtok(line, " \t\n\r");
-	if (opcode == NULL || strcmp(opcode, "#") == 0)
+	if (opcode == NULL || strncmp(opcode, "#", 1) == 0)
 		return;
 
 	arg = strtok(NULL, " \t\n\r");
